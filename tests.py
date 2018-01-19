@@ -24,7 +24,7 @@ from fourier_tools import plotstft
 
 
 # load sound
-sound = "C:/repositories/ecoacoustics/CONAFOR-2015__1__20150304_093000.wav"
+sound = "/home/julian/Documents/bats/ecoacoustics/CONAFOR-2015__1__20150304_093000.wav"
 
 # you may import sounds in two ways, using scipy or the wave package
 sample_rate_1, frames_1 = read_wav(sound,package="scipy")
