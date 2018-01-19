@@ -21,10 +21,12 @@ from soundfiles_io import select_first_channel
 from fourier_tools import stft
 from fourier_tools import plotstft
 
+# prueba Tona
+
 
 
 # load sound
-sound = "/home/julian/Documents/bats/ecoacoustics/CONAFOR-2015__1__20150304_093000.wav"
+sound = "C:/Users/ttonaru/repos/ecoacoustics/CONAFOR-2015__1__20150304_093000.wav"
 
 # you may import sounds in two ways, using scipy or the wave package
 sample_rate_1, frames_1 = read_wav(sound,package="scipy")
