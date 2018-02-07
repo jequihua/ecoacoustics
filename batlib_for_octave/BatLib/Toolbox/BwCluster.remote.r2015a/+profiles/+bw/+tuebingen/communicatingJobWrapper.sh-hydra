@@ -1,0 +1,49 @@
+#!/bin/sh
+# This wrapper script is intended to be submitted to PBS to support
+# communicating jobs.
+#
+# This script uses the following environment variables set by the submit MATLAB code:
+# MDCE_MATLAB_EXE     - the MATLAB executable to use
+# MDCE_MATLAB_ARGS    - the MATLAB args to use
+# MDCE_TOTAL_TASKS    - the number of workers to start
+#
+# The following environment variables are forwarded through mpiexec:
+# MDCE_DECODE_FUNCTION     - the decode function to use
+# MDCE_STORAGE_LOCATION    - used by decode function
+# MDCE_STORAGE_CONSTRUCTOR - used by decode function
+# MDCE_JOB_LOCATION        - used by decode function
+
+# Copyright 2006-2015 The MathWorks, Inc.
+
+# Intel MPI 4.1 implements MPI-2.2
+# R2013b ships MPICH2 version 1.4.1p1
+# Compatable through at least R2014b (and 15a?)
+
+module load mpi/impi/4.1.1-intel-13.1
+MPIEXEC=mpiexec.hydra
+MPIEXEC_CODE=0
+
+runMpiexec() {
+    echo Node list: ${PBS_NODEFILE:?"Node file undefined"}
+
+    if [ "X${MDCE_DEBUG}X" == "XtrueX" ]; then
+        MPI_VERBOSE=-v
+    else
+        MPI_VERBOSE=
+    fi
+
+    CMD="${MPIEXEC} ${MPI_VERBOSE} -n ${MDCE_TOTAL_TASKS} \"${MDCE_MATLAB_EXE}\" ${MDCE_MATLAB_ARGS}"
+
+    # As a debug stage: echo the command line...
+    echo $CMD
+
+    # ...and then execute it
+    eval $CMD
+
+    MPIEXEC_CODE=${?}
+}
+
+runMpiexec
+
+echo "Exiting with code: ${MPIEXEC_CODE}"
+exit ${MPIEXEC_CODE}

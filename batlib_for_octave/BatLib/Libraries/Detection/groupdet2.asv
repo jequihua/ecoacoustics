@@ -1,0 +1,136 @@
+function [G,dX] = groupdet2(X,m,gmin,gmax,dmax)
+
+if nargin<5
+    dmax(1) = 250e-3;
+    dmax(2) = 10e3;
+end
+if nargin<4
+    gmax(1) = 1.5;
+    gmax(2) = 1.15;
+end
+if nargin<3
+    gmin(1) = 0.5;
+    gmin(2) = 0.85;
+end
+if nargin<2
+    m = 2;
+end
+
+if ~issorted(X(:,1))
+    disp('Warning: detections are not sorted')
+end
+
+if m<2
+    m=2;
+end
+
+  I    = size(X,1);
+  G    = zeros(I,1);
+  dX   = zeros(I,2);
+  
+    if I >2
+     while any (~G)         
+         i = find(~G,1,'first');
+         g = max(G)+1;
+         key = 1;
+         while key              
+              key1 = 0;
+              for j= ifilt2(X,i,I,gmin,gmax,dmax)
+                  if G(j)==0
+                    dj  = dist(X,i,j,dmax);
+                        for k = j+1:I
+                            if G(k)==0
+                            dk = dist(X,j,k,dmax);
+                            d(1) = dk(1)/dj(1);
+                            d(2) = X(k,2)/(X(j,2)+dj(2));
+                                if gmin(1) <= d(1) && d(1) <=gmax(1)                                
+                                    G(i) = g;
+                                    G(j) = g;
+                                    G(k) = g;
+                                    dX(i,:) = dj;
+                                    dX(j,:) = dj;
+                                    dX(k,:) = dk;
+                                    key1  = 1;
+                                    break                                
+                                end
+                            end 
+                    end
+                    if key1
+                        break
+                    end
+                  end
+              end
+              
+           if key1               
+               while j<I             
+                   ig  = find(G==g)';
+                   j   = ig(end);                   
+                   dj  = dmean(X,ig,m,dmax);
+                   key2 = 1; 
+                      for k = j+1:I  
+                          if G(k)==0
+                            dk = dist(X,j,k,dmax);
+                            d(1) = dk(1)/dj(1);
+                            d(2) = X(k,2)/(X(j,2)+dj(2));
+                            if gmin(1) <= d(1) && d(1) <=gmax(1)
+                                if gmin(2) <= d(2) && d(2) <=gmax(2)
+                                  G(j) = g;
+                                  G(k) = g;
+                                  dX(j,:) = dj;
+                                  dX(k,:) = dk;
+                                  key2  = 0;
+                              break
+                                end
+                            end
+                          end                                
+                      end
+                      if key2
+                          key  = 0;
+                          break
+                      end                    
+               end
+           end           
+           if key
+           G(i) = g;
+           key  = 0;
+           end              
+         end
+     end
+    else
+        G = [1;2];
+    end
+    
+ 
+    function d = dmean(X,ind,m,dmax)        
+         n     = length(ind);          
+         dbag  = nan(m-1,1);
+         for i = 1:min(n-1,m-1)
+                j   = n-i+1;
+                dbag(i,1)  = dist(X,ind(j-1),ind(j),dmax);                
+         end
+         d     = nanmean(dbag,1);
+         
+        function d = dist(X,i,j,dmax)
+            d = X(j,1)-X(i,1);            
+            if d > dmax(1)
+                d = Inf;
+            end
+            
+            
+            function j = ifilt2(X,i,I,gmin,gmax,dmax)
+                j = false(I,1);
+                    for k = i+1:I
+                        x  = X(k,2)/X(i,2);
+                        dX = abs(X(k,2)-X(i,2)); 
+                        if dX <dmax(2)
+                            if gmin(2) <= x && x <=gmax(2)
+                                j=1;
+                            end
+                        end
+                    end
+                j = find(j);
+
+                
+                
+              
+

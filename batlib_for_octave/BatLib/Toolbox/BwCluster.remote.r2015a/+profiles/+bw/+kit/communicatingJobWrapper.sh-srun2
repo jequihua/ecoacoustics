@@ -1,0 +1,89 @@
+#!/bin/sh
+# This wrapper script is intended to be submitted to SLURM to support
+# communicating jobs.
+#
+# This script uses the following environment variables set by the submit MATLAB code:
+# MDCE_MATLAB_EXE     - the MATLAB executable to use
+# MDCE_MATLAB_ARGS    - the MATLAB args to use
+# MDCE_TOTAL_TASKS    - the number of workers to start
+#
+# The following environment variables are forwarded through mpiexec:
+# MDCE_DECODE_FUNCTION     - the decode function to use
+# MDCE_STORAGE_LOCATION    - used by decode function
+# MDCE_STORAGE_CONSTRUCTOR - used by decode function
+# MDCE_JOB_LOCATION        - used by decode function
+#
+# For backward compatability, this wrapper script uses the following SLURM environment variables:
+# SLURM_NODELIST           - instead of SLURM_JOB_NODELIST
+
+# Copyright 2006-2015 The MathWorks, Inc.
+
+# Intel MPI 4.1 implements MPI-2.2
+# R2013b ships MPICH2 version 1.4.1p1
+# Compatable through at least R2014b (and 15a?)
+
+module load mpi/impi/4.1.3-intel-14.0
+MPIEXEC=srun
+MPIEXEC_CODE=0
+
+export I_MPI_PMI_LIBRARY=/usr/lib64/libpmi.so
+
+# Set stack size to unlimited
+ulimit -s unlimited
+
+# export I_MPI_FABRICS_LIST=shm:tcp
+# export I_MPI_FABRICS=shm:tcp
+
+# Work out how many processes to launch - set MACHINE_ARG
+chooseMachineArg() {
+    echo Node list: ${SLURM_NODELIST:?"Node list undefined"}
+    MACHINE_ARG="-l -n ${MDCE_TOTAL_TASKS}"
+}
+
+runMpiexec() {
+    ###################################################
+    # DEBUGGING
+    ###################################################
+    # cmd="strace -o $STRACE_DIR/mdcs_test -tt -ff $cmd"
+    # STRACE_LAUNCHER_PFX="strace -o $STRACE_DIR/mpiexec_a -tt -f"
+    ## THIS PROBABLY ONLY WORKS WELL FOR 1 WORKER
+    # STRACE_LAUNCHEE_PFX="strace -o $STRACE_DIR/worker_a -tt -f"
+    # CMD="$STRACE_LAUNCHER_PFX $MPIEXEC -l $MACHINE_ARG $STRACE_LAUNCHEE_PFX $MDCE_MATLAB_EXE $MDCE_MATLAB_ARGS"
+    ###################################################
+
+    if [ "X${MDCE_DEBUG}X" == "XtrueX" ]; then
+        # SRUN verbosity can go as high as -vvvvv
+        MPI_VERBOSE=-vv
+
+        # For each debug message, date and time, log level.  Don't have
+        #   MPI display the rank level since we're already doing it
+        # Could also add source file name (file), source line number (line)
+        #   scope (scope), pid (pid), & host (host)
+        export I_MPI_DEBUG=5,datetime,level,norank
+    else
+        MPI_VERBOSE=
+    fi
+
+    CMD="$MPIEXEC $MPI_VERBOSE $MACHINE_ARG $MDCE_MATLAB_EXE $MDCE_MATLAB_ARGS"
+
+    # As a debug stage: echo the command line...
+    echo $CMD
+
+    # ...and then execute it
+    eval $CMD
+
+    MPIEXEC_CODE=${?}
+}
+
+###################################################
+# DEBUGGING
+###################################################
+# STRACE_DIR=$HOME/matlab/stracelogs
+# test -d $STRACE_DIR || mkdir -p $STRACE_DIR
+###################################################
+
+chooseMachineArg
+runMpiexec
+
+echo "Exiting with code: ${MPIEXEC_CODE}"
+exit ${MPIEXEC_CODE}

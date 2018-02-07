@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LabelClass classname="generic">
+  <entity>
+    <name>labeled</name>
+    <color>-4144960</color>
+    <continuousColor>-12566464</continuousColor>
+    <id>0</id>
+  </entity>
+</LabelClass>
+

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AnnotationProject name="T" length="2231.0" zoom="0.86060063" commandlineExecutionString="">
+  <labelclasses>
+    <lclass name="generic">generic.xml</lclass>
+    <lclass name="Species">Species.xml</lclass>
+  </labelclasses>
+  <labeltracks>
+    <ltrack name="SpID" class="Species" active="true" order="2" learnable="false" trackHeight="100">SpID.xml</ltrack>
+  </labeltracks>
+  <datatracks>
+    <scalartrack>
+      <scatrack name="DetSignal" active="true" type="ScalarTrack" showpoints="false" showline="true" min="-1.44218019" max="21.33724066" order="1" learnable="false" trackHeight="100">DetSignal.raw</scatrack>
+    </scalartrack>
+    <vectortrack>
+      <vectrack name="Spectrogram" active="true" type="VectorTrack" colormap="Colorful" min="-77.24712405" max="-37.53187116" dimension="200" order="0" learnable="false" trackHeight="200" asScalar="false">Spectrogram.raw</vectrack>
+    </vectortrack>
+  </datatracks>
+  <mediatracks>
+    <audio />
+    <video />
+  </mediatracks>
+</AnnotationProject>
+

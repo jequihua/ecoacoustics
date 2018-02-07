@@ -24,7 +24,6 @@ from fourier_tools import plotstft
 # prueba Tona
 
 
-
 # load sound
 sound = "C:/Users/ttonaru/repos/ecoacoustics/CONAFOR-2015__1__20150304_093000.wav"
 

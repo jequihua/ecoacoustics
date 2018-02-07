@@ -1,0 +1,303 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LabelTrack classname="Species" externalchange="0" interpolationType="1" isContinuous="false" name="SpID">
+   <label>
+      <starttime>37</starttime>
+      <endtime>39</endtime>
+      <timeStamp>736040</timeStamp>
+      <value>1.0</value>
+      <comment/>
+      <type>MANUAL</type>
+      <text>Call5</text>
+      <classentity>undefined</classentity>
+      <continuousSamplingPoints>
+         <samplePoint t="0.00000000" y="0"/>
+         <samplePoint t="1.00000000" y="0"/>
+         <samplePoint t="2.00000000" y="0"/>
+      </continuousSamplingPoints>
+   </label>
+   <label>
+      <starttime>45</starttime>
+      <endtime>48</endtime>
+      <timeStamp>736040</timeStamp>
+      <value>1.0</value>
+      <comment/>
+      <type>MANUAL</type>
+      <text>Call7</text>
+      <classentity>undefined</classentity>
+      <continuousSamplingPoints>
+         <samplePoint t="0.00000000" y="0"/>
+         <samplePoint t="1.50000000" y="0"/>
+         <samplePoint t="3.00000000" y="0"/>
+      </continuousSamplingPoints>
+   </label>
+   <label>
+      <starttime>49</starttime>
+      <endtime>51</endtime>
+      <timeStamp>736040</timeStamp>
+      <value>1.0</value>
+      <comment/>
+      <type>MANUAL</type>
+      <text>Call10</text>
+      <classentity>undefined</classentity>
+      <continuousSamplingPoints>
+         <samplePoint t="0.00000000" y="0"/>
+         <samplePoint t="1.00000000" y="0"/>
+         <samplePoint t="2.00000000" y="0"/>
+      </continuousSamplingPoints>
+   </label>
+   <label>
+      <starttime>53</starttime>
+      <endtime>56</endtime>
+      <timeStamp>736040</timeStamp>
+      <value>1.0</value>
+      <comment/>
+      <type>MANUAL</type>
+      <text>Call14</text>
+      <classentity>undefined</classentity>
+      <continuousSamplingPoints>
+         <samplePoint t="0.00000000" y="0"/>
+         <samplePoint t="1.50000000" y="0"/>
+         <samplePoint t="3.00000000" y="0"/>
+      </continuousSamplingPoints>
+   </label>
+   <label>
+      <starttime>68</starttime>
+      <endtime>76</endtime>
+      <timeStamp>736040</timeStamp>
+      <value>1.0</value>
+      <comment/>
+      <type>MANUAL</type>
+      <text>Call16</text>
+      <classentity>undefined</classentity>
+      <continuousSamplingPoints>
+         <samplePoint t="0.00000000" y="0"/>
+         <samplePoint t="4.00000000" y="0"/>
+         <samplePoint t="8.00000000" y="0"/>
+      </continuousSamplingPoints>
+   </label>
+   <label>
+      <starttime>84</starttime>
+      <endtime>86</endtime>
+      <timeStamp>736040</timeStamp>
+      <value>1.0</value>
+      <comment/>
+      <type>MANUAL</type>
+      <text>Call20</text>
+      <classentity>undefined</classentity>
+      <continuousSamplingPoints>
+         <samplePoint t="0.00000000" y="0"/>
+         <samplePoint t="1.00000000" y="0"/>
+         <samplePoint t="2.00000000" y="0"/>
+      </continuousSamplingPoints>
+   </label>
+   <label>
+      <starttime>105</starttime>
+      <endtime>110</endtime>
+      <timeStamp>736040</timeStamp>
+      <value>1.0</value>
+      <comment/>
+      <type>MANUAL</type>
+      <text>Call24</text>
+      <classentity>undefined</classentity>
+      <continuousSamplingPoints>
+         <samplePoint t="0.00000000" y="0"/>
+         <samplePoint t="2.50000000" y="0"/>
+         <samplePoint t="5.00000000" y="0"/>
+      </continuousSamplingPoints>
+   </label>
+   <label>
+      <starttime>190</starttime>
+      <endtime>194</endtime>
+      <timeStamp>736040</timeStamp>
+      <value>1.0</value>
+      <comment/>
+      <type>MANUAL</type>
+      <text>Call26</text>
+      <classentity>undefined</classentity>
+      <continuousSamplingPoints>
+         <samplePoint t="0.00000000" y="0"/>
+         <samplePoint t="2.00000000" y="0"/>
+         <samplePoint t="4.00000000" y="0"/>
+      </continuousSamplingPoints>
+   </label>
+   <label>
+      <starttime>194</starttime>
+      <endtime>196</endtime>
+      <timeStamp>736040</timeStamp>
+      <value>1.0</value>
+      <comment/>
+      <type>MANUAL</type>
+      <text>Call27</text>
+      <classentity>undefined</classentity>
+      <continuousSamplingPoints>
+         <samplePoint t="0.00000000" y="0"/>
+         <samplePoint t="1.00000000" y="0"/>
+         <samplePoint t="2.00000000" y="0"/>
+      </continuousSamplingPoints>
+   </label>
+   <label>
+      <starttime>262</starttime>
+      <endtime>272</endtime>
+      <timeStamp>736040</timeStamp>
+      <value>1.0</value>
+      <comment/>
+      <type>MANUAL</type>
+      <text>Call28</text>
+      <classentity>undefined</classentity>
+      <continuousSamplingPoints>
+         <samplePoint t="0.00000000" y="0"/>
+         <samplePoint t="5.00000000" y="0"/>
+         <samplePoint t="10.00000000" y="0"/>
+      </continuousSamplingPoints>
+   </label>
+   <label>
+      <starttime>336</starttime>
+      <endtime>339</endtime>
+      <timeStamp>736040</timeStamp>
+      <value>1.0</value>
+      <comment/>
+      <type>MANUAL</type>
+      <text>Call29</text>
+      <classentity>undefined</classentity>
+      <continuousSamplingPoints>
+         <samplePoint t="0.00000000" y="0"/>
+         <samplePoint t="1.50000000" y="0"/>
+         <samplePoint t="3.00000000" y="0"/>
+      </continuousSamplingPoints>
+   </label>
+   <label>
+      <starttime>340</starttime>
+      <endtime>342</endtime>
+      <timeStamp>736040</timeStamp>
+      <value>1.0</value>
+      <comment/>
+      <type>MANUAL</type>
+      <text>Call32</text>
+      <classentity>undefined</classentity>
+      <continuousSamplingPoints>
+         <samplePoint t="0.00000000" y="0"/>
+         <samplePoint t="1.00000000" y="0"/>
+         <samplePoint t="2.00000000" y="0"/>
+      </continuousSamplingPoints>
+   </label>
+   <label>
+      <starttime>361</starttime>
+      <endtime>362</endtime>
+      <timeStamp>736040</timeStamp>
+      <value>1.0</value>
+      <comment/>
+      <type>MANUAL</type>
+      <text>Call34</text>
+      <classentity>undefined</classentity>
+      <continuousSamplingPoints>
+         <samplePoint t="0.00000000" y="0"/>
+         <samplePoint t="0.50000000" y="0"/>
+         <samplePoint t="1.00000000" y="0"/>
+      </continuousSamplingPoints>
+   </label>
+   <label>
+      <starttime>384</starttime>
+      <endtime>393</endtime>
+      <timeStamp>736040</timeStamp>
+      <value>1.0</value>
+      <comment/>
+      <type>MANUAL</type>
+      <text>Call37</text>
+      <classentity>undefined</classentity>
+      <continuousSamplingPoints>
+         <samplePoint t="0.00000000" y="0"/>
+         <samplePoint t="4.50000000" y="0"/>
+         <samplePoint t="9.00000000" y="0"/>
+      </continuousSamplingPoints>
+   </label>
+   <label>
+      <starttime>430</starttime>
+      <endtime>432</endtime>
+      <timeStamp>736040</timeStamp>
+      <value>1.0</value>
+      <comment/>
+      <type>MANUAL</type>
+      <text>Call39</text>
+      <classentity>undefined</classentity>
+      <continuousSamplingPoints>
+         <samplePoint t="0.00000000" y="0"/>
+         <samplePoint t="1.00000000" y="0"/>
+         <samplePoint t="2.00000000" y="0"/>
+      </continuousSamplingPoints>
+   </label>
+   <label>
+      <starttime>523</starttime>
+      <endtime>527</endtime>
+      <timeStamp>736040</timeStamp>
+      <value>1.0</value>
+      <comment/>
+      <type>MANUAL</type>
+      <text>Call46</text>
+      <classentity>undefined</classentity>
+      <continuousSamplingPoints>
+         <samplePoint t="0.00000000" y="0"/>
+         <samplePoint t="2.00000000" y="0"/>
+         <samplePoint t="4.00000000" y="0"/>
+      </continuousSamplingPoints>
+   </label>
+   <label>
+      <starttime>534</starttime>
+      <endtime>536</endtime>
+      <timeStamp>736040</timeStamp>
+      <value>1.0</value>
+      <comment/>
+      <type>MANUAL</type>
+      <text>Call49</text>
+      <classentity>undefined</classentity>
+      <continuousSamplingPoints>
+         <samplePoint t="0.00000000" y="0"/>
+         <samplePoint t="1.00000000" y="0"/>
+         <samplePoint t="2.00000000" y="0"/>
+      </continuousSamplingPoints>
+   </label>
+   <label>
+      <starttime>631</starttime>
+      <endtime>633</endtime>
+      <timeStamp>736040</timeStamp>
+      <value>1.0</value>
+      <comment/>
+      <type>MANUAL</type>
+      <text>Call51</text>
+      <classentity>undefined</classentity>
+      <continuousSamplingPoints>
+         <samplePoint t="0.00000000" y="0"/>
+         <samplePoint t="1.00000000" y="0"/>
+         <samplePoint t="2.00000000" y="0"/>
+      </continuousSamplingPoints>
+   </label>
+   <label>
+      <starttime>645</starttime>
+      <endtime>647</endtime>
+      <timeStamp>736040</timeStamp>
+      <value>1.0</value>
+      <comment/>
+      <type>MANUAL</type>
+      <text>Call53</text>
+      <classentity>undefined</classentity>
+      <continuousSamplingPoints>
+         <samplePoint t="0.00000000" y="0"/>
+         <samplePoint t="1.00000000" y="0"/>
+         <samplePoint t="2.00000000" y="0"/>
+      </continuousSamplingPoints>
+   </label>
+   <label>
+      <starttime>673</starttime>
+      <endtime>682</endtime>
+      <timeStamp>736040</timeStamp>
+      <value>1.0</value>
+      <comment/>
+      <type>MANUAL</type>
+      <text>Call56</text>
+      <classentity>undefined</classentity>
+      <continuousSamplingPoints>
+         <samplePoint t="0.00000000" y="0"/>
+         <samplePoint t="4.50000000" y="0"/>
+         <samplePoint t="9.00000000" y="0"/>
+      </continuousSamplingPoints>
+   </label>
+</LabelTrack>
